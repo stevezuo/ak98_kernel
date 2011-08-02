@@ -1,0 +1,13 @@
+config USB_GADGET_AK88
+	boolean "AK88 USB Device Port"
+	depends on ARCH_AK88
+	select USB_GADGET_SELECTED
+	select USB_GADGET_DUALSPEED
+	help
+	  AK88 OTG device support
+
+config USB_AK88
+	tristate
+	depends on USB_GADGET_AK88
+	default USB_GADGET
+

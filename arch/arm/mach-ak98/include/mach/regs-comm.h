@@ -1,0 +1,121 @@
+
+/*
+ * arch/arm/mach-ak98/include/mach/ak98_comm.h
+ */
+#ifndef __REGS_COMM_H_
+#define __REGS_COMM_H_
+
+#include <mach/map.h>
+
+/************************ CLOCK/POWER*****************************/
+#define rCHIP_ID			REG_VA_VAL(AK98_VA_SYSCTRL, 0x0000)
+
+#define rCLK_DIV1           REG_VA_VAL(AK98_VA_SYSCTRL, 0x0004)
+#define rCLK_DIV2           REG_VA_VAL(AK98_VA_SYSCTRL, 0x0008)
+#define rCLK_CON1        	REG_VA_VAL(AK98_VA_SYSCTRL, 0x000C)
+#define rCLK_CON2        	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0010)
+
+#define rMULFUN_CON2       	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0014)
+#define rMULFUN_CON1       	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0058)
+
+#define rSHAREPIN_CON1   	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0078)
+#define rSHAREPIN_CON2   	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0074)
+
+#define rPPU_PPD1			REG_VA_VAL(AK98_VA_SYSCTRL, 0x009C)
+#define rPPU_PPD2 			REG_VA_VAL(AK98_VA_SYSCTRL, 0x00A0)
+#define rPPU_PPD3			REG_VA_VAL(AK98_VA_SYSCTRL, 0x00A4)
+#define rPPU_PPD4			REG_VA_VAL(AK98_VA_SYSCTRL, 0x00A8)
+#define rMCGPIO_PPD			REG_VA_VAL(AK98_VA_SYSCTRL, 0x0120)
+
+#define rIO_CON1           	REG_VA_VAL(AK98_VA_SYSCTRL, 0x00D4)
+#define rIO_CON2           	REG_VA_VAL(AK98_VA_SYSCTRL, 0x00D8)
+
+/*************************** CRC *****************************/
+#define rCRC_CON 	        REG_VA_VAL(AK98_VA_L2CTRL, 0xA4)
+#define rCRC_POLYLEN   		REG_VA_VAL(AK98_VA_SYSCTRL, 0x00AC)
+#define rCRC_COEFCON   		REG_VA_VAL(AK98_VA_SYSCTRL, 0x00B0)
+#define rCRC_RESULT    		REG_VA_VAL(AK98_VA_SYSCTRL, 0x00D0)
+
+/************************** IRQ ******************************/
+#define rIRQ_MASK           REG_VA_VAL(AK98_VA_SYSCTRL, 0x0034)
+#define rFIQ_MASK           REG_VA_VAL(AK98_VA_SYSCTRL, 0x0038)
+#define rINT_STAT           REG_VA_VAL(AK98_VA_SYSCTRL, 0x00CC)
+#define rINT_STATEN	        REG_VA_VAL(AK98_VA_SYSCTRL, 0x004C)
+
+/************************** RTC ******************************/
+#define rRTCUSB_CON         REG_VA_VAL(AK98_VA_SYSCTRL, 0x0050)
+#define rRTC_BOOTMOD        REG_VA_VAL(AK98_VA_SYSCTRL, 0x0054)
+#define rWKUPGPIO_POL       REG_VA_VAL(AK98_VA_SYSCTRL, 0x003C)
+#define rWKUPGPIO_CLR		REG_VA_VAL(AK98_VA_SYSCTRL, 0x0040)
+#define rWKUPGPIO_EN        REG_VA_VAL(AK98_VA_SYSCTRL, 0x0044)
+#define rWKUPGPIO_STAT      REG_VA_VAL(AK98_VA_SYSCTRL, 0x0048)
+
+/*********************** PWM **********************************/
+#define rPWM1_CON       	REG_VA_VAL(AK98_VA_SYSCTRL, 0x002C)
+#define rPWM2_CON       	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0030)
+#define rPWM3_CON       	REG_VA_VAL(AK98_VA_SYSCTRL, 0x00B4)
+#define rPWM4_CON       	REG_VA_VAL(AK98_VA_SYSCTRL, 0x00B8)
+
+/********************* TIMER **********************************/
+#define rTIMER1_CON      	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0018)
+#define rTIMER2_CON      	REG_VA_VAL(AK98_VA_SYSCTRL, 0x001C)
+#define rTIMER3_CON      	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0020)
+#define rTIMER4_CON      	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0024)
+#define rTIMER5_CON      	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0028)
+
+#define rTIMER1_RDBACK    	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0100)
+#define rTIMER2_RDBACK    	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0104)
+#define rTIMER3_RDBACK    	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0108)
+#define rTIMER4_RDBACK    	REG_VA_VAL(AK98_VA_SYSCTRL, 0x010C)
+#define rTIMER5_RDBACK    	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0110)
+
+/******************** ANALOG *********************************/
+#define rADC1_CON			REG_VA_VAL(AK98_VA_SYSCTRL, 0x0060)
+#define rADC1_STAT          REG_VA_VAL(AK98_VA_SYSCTRL, 0x0070)
+#define rADC2_CON           REG_VA_VAL(AK98_VA_ADC, 0x00)
+#define rADC2_DATA          REG_VA_VAL(AK98_VA_ADC, 0x04)
+
+#define rTSWTIME_PENDFILT	REG_VA_VAL(AK98_VA_SYSCTRL, 0x0128)
+#define rPENDFILT_CON		REG_VA_VAL(AK98_VA_SYSCTRL, 0x012C)
+#define rTS_XVAL			REG_VA_VAL(AK98_VA_SYSCTRL, 0x0068)
+#define rTS_YVAL			REG_VA_VAL(AK98_VA_SYSCTRL, 0x006C)
+
+#define rANALOG_CON1        REG_VA_VAL(AK98_VA_SYSCTRL, 0x0130)
+#define rANALOG_CON2        REG_VA_VAL(AK98_VA_SYSCTRL, 0x0134)
+#define rANALOG_CON3        REG_VA_VAL(AK98_VA_SYSCTRL, 0x005C)
+#define rANALOG_CON4        REG_VA_VAL(AK98_VA_SYSCTRL, 0x0064)
+
+#define rDAC_CON			REG_VA_VAL(AK98_VA_DAC, 0x00)
+#define rDAC_CPUDATA		REG_VA_VAL(AK98_VA_DAC, 0x08)
+
+/****************** RAM CONTROLER ********************************/
+#define rRAMIO_CON 	       	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE078)
+#define rMEM_CON1          	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE000)
+#define rMEM_CON2          	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE004)
+#define rMEM_CON3          	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE008)
+#define rMEM_CON4          	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE00C)
+#define rCPU_CMD            REG_VA_VAL(AK98_VA_SUBCTRL, 0xE010)
+#define rAHBTIME_PICE_CON   REG_VA_VAL(AK98_VA_SUBCTRL, 0xE014)
+#define rAHB_PRI1   	   	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE018)
+#define rAHB_PRI2			REG_VA_VAL(AK98_VA_SUBCTRL, 0xE01C)
+#define rDLL_CON           	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE020)
+#define rRTIME_CAL_CON     	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE024)
+
+#define rDELAY_LCON1   		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE028)
+#define rDELAY_LCON2   		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE02C)
+#define rDELAY_LCON3   		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE030)
+#define rDELAY_LCON4   		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE034)
+#define rDELAY_LCON5   		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE038)
+#define rDELAY_LCON6   		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE03A)
+#define rDELAY_LCON7   		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE040)
+#define rDELAY_LCON8   		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE044)
+#define rDELAY_LCON9   		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE048)
+#define rDELAY_LCON10  		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE04C)
+#define rDELAY_LCON11  		REG_VA_VAL(AK98_VA_SUBCTRL, 0xE050)
+#define rDELAY_EN_LCON1    	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE054)
+#define rDELAY_EN_LCON2    	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE058)
+#define rDLLDCC_CON       	REG_VA_VAL(AK98_VA_SUBCTRL, 0xE05C)
+
+
+#endif  /* __REG_COMM_H_ */
+

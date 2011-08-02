@@ -1,0 +1,33 @@
+if ARCH_AK88
+
+choice
+	prompt "AK88 boards"
+	default ARCH_AK8802EBOOK
+
+config BOARD_AK8801EPC
+	bool "EPC board based on AK8801"
+	depends on ARCH_AK88
+	help
+	  Say Y here if you are using the EPC board based on AK8801.
+
+config BOARD_AK8802EBOOK
+	bool "EBOOK board based on AK8802"
+	depends on ARCH_AK88
+	help
+	  Say Y here if you are using the EBOOK board on AK8802.
+
+endchoice
+
+config AK88_PWM
+	bool "PWM control driver for AK88"
+	depends on ARCH_AK88
+	help
+	  Say Y here if you want support pwm control.
+
+config AK88_PM
+	bool "power management for AK88"
+	depends on PM && ARCH_AK88
+	help
+	  Say Y here if you want support power management for AK88.
+
+endif

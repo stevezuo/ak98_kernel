@@ -1,0 +1,45 @@
+if ARCH_AK98
+
+choice
+	prompt "AK98XX boards"
+	default AK9801_ATHENA
+
+config AK9801_ATHENA
+	bool "ATHENA based on AK9801"
+	depends on ARCH_AK98
+	help
+	  Say Y here if you are using the ATHENA board based on AK9801.
+
+config AK9805_TV908
+	bool "TV908 based on AK9805"
+	depends on ARCH_AK98
+	help
+	  Say Y here if you are using the TV908 board on AK9805.
+
+config AK9805_MP5
+	bool "Smart MP5 based on AK9805"
+	depends on ARCH_AK98
+	help
+	  Say Y here if you are using the MP5 board on AK9805.
+
+endchoice
+
+config AK98_PWM
+	bool "PWM control driver for AK98"
+	depends on ARCH_AK98
+	help
+	  Say Y here if you want support pwm control.
+
+config AK98_PM
+	bool "AK98 CPU Power Management support"
+	depends on PM && ARCH_AK98
+	help
+	  Say Y here if you want support power management for AK98.
+
+config AK98_CPUFREQ
+	bool "AK98 CPU Frequency scaling support"
+	depends on CPU_FREQ && ARCH_AK98
+	help
+	  Say Y here, CPU Frequency scaling support for AK98 SoC CPUs.
+
+endif

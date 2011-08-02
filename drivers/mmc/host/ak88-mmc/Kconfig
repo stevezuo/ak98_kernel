@@ -1,0 +1,10 @@
+
+
+config MMC_AK88
+    tristate "AK88 AK7801 MMC/SD Card Interface support"
+    depends on ARCH_AK88
+    help
+      This selects the AK88 AK7801 MMC/SD card Interface.
+      say Y or M here.
+      If unsure, say N.
+

@@ -1,0 +1,6 @@
+config AK98_MAC
+	tristate "AK98 MAC Device"
+	depends on ARCH_AK98
+	help
+	  AK98 MAC device support
+

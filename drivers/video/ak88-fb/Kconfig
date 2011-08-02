@@ -1,0 +1,23 @@
+
+
+config FB_AK88
+    tristate "AK88 LCD framebuffer support"
+    depends on FB && ARCH_AK88
+    select FB_CFB_FILLRECT
+    select FB_CFB_COPYAREA
+    select FB_CFB_IMAGEBLIT
+    help
+      Frame buffer driver for the built-in LCD controller in the AK88
+      processor.
+
+      If unsure, Say N.
+
+config FB_AK88_DEBUG
+    bool "AK88 lcd debug messages"
+    depends on FB_AK88
+    help
+      Turn on debugging messages. Note that you set/unset at run time
+      through sysfs.
+
+
+

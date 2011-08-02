@@ -1,0 +1,31 @@
+
+
+config MMC_AK98
+    tristate "AK98  MMC/SD/SDIO Card Interface support"
+    depends on ARCH_AK98
+    help
+      This selects the AK98 MMC/SD card Interface.
+      say Y or M here.
+      If unsure, say N.
+
+choice 
+	prompt "MMC/SD Data line select"
+	depends on MMC_AK98
+	default FOUR_DATA_LINE
+
+config FOUR_DATA_LINE
+	bool "four data line mmc/sd slot"
+
+config EIGHT_DATA_LINE
+	bool "eight data line mmc/sd slot"
+endchoice
+
+config SDIO_DEVICE_SLOT
+    tristate "AK98 SDIO Card slot"
+	default N
+    help
+      This selects the AK98 sdio card Interface.
+      say Y or M here.
+      If unsure, say N.
+
+

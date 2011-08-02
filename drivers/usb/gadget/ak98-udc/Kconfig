@@ -1,0 +1,27 @@
+config USB_GADGET_AK98_PRODUCER
+	boolean "AK98 USB Device Port for PRODUCER"
+	depends on ARCH_AK98
+	select USB_GADGET_SELECTED
+	select USB_GADGET_DUALSPEED
+	help
+	  AK98 OTG device support for producer
+
+if USB_GADGET_AK98_PRODUCER
+config USB_AK98_PRODUCER
+	tristate
+	default m
+endif
+
+config USB_GADGET_AK98
+	boolean "AK98 USB Device Port"
+	depends on ARCH_AK98
+	select USB_GADGET_SELECTED
+	select USB_GADGET_DUALSPEED
+	help
+	  AK98 OTG device support
+
+if USB_GADGET_AK98
+config USB_AK98
+	tristate
+	default y 
+endif
